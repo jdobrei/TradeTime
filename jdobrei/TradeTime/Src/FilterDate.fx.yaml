@@ -1,0 +1,186 @@
+FilterDate As screen:
+    Fill: =RGBA(237, 241, 244, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    OnVisible: =
+    Width: =Max(App.Width, App.DesignWidth)
+
+    FilterDateHeader As label:
+        Align: =Align.Center
+        Fill: =RGBA(249, 251, 253, 1)
+        FocusedBorderColor: =FilterDateHeader.BorderColor
+        Height: =98
+        HoverBorderColor: =FilterDateHeader.BorderColor
+        HoverColor: =FilterDateHeader.Color
+        HoverFill: =FilterDateHeader.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =FilterDateHeader.BorderColor
+        PressedColor: =FilterDateHeader.Color
+        PressedFill: =FilterDateHeader.Fill
+        Size: =23
+        Text: =
+        Width: =640
+        ZIndex: =1
+
+    FilterDateGrayLine As rectangle:
+        DisabledFill: =FilterDateGrayLine.Fill
+        Fill: =RGBA(196, 220, 232, 1)
+        FocusedBorderColor: =FilterDateGrayLine.BorderColor
+        Height: =1
+        HoverFill: =FilterDateGrayLine.Fill
+        PressedFill: =FilterDateGrayLine.Fill
+        Width: =640
+        Y: =98
+        ZIndex: =3
+
+    FilterDateTitle As label:
+        Align: =Align.Center
+        FocusedBorderColor: =FilterDateTitle.BorderColor
+        Height: =65
+        HoverBorderColor: =FilterDateTitle.BorderColor
+        HoverColor: =FilterDateTitle.Color
+        HoverFill: =FilterDateTitle.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =FilterDateTitle.BorderColor
+        PressedColor: =FilterDateTitle.Color
+        PressedFill: =FilterDateTitle.Fill
+        Size: =18
+        Text: ="FILTER"
+        Width: =560
+        X: =62
+        Y: =16
+        ZIndex: =25
+
+    FilterDateBackIcon As icon.ChevronLeft:
+        Color: =RGBA(4, 169, 244, 1)
+        DisabledFill: =FilterDateBackIcon.Fill
+        FocusedBorderColor: =FilterDateBackIcon.BorderColor
+        FocusedBorderThickness: =0
+        Height: =70
+        HoverBorderColor: =ColorFade(FilterDateBackIcon.BorderColor, 20%)
+        HoverColor: =ColorFade(FilterDateBackIcon.Color, 20%)
+        HoverFill: =FilterDateBackIcon.Fill
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate('My Expense',BorderStyle.None)
+        PressedBorderColor: =ColorFade(FilterDateBackIcon.BorderColor, -20%)
+        PressedColor: =ColorFade(FilterDateBackIcon.Color, -20%)
+        PressedFill: =FilterDateBackIcon.Fill
+        Width: =46
+        X: =16
+        Y: =11
+        ZIndex: =26
+
+    FilterDatestartDate As label:
+        Color: =RGBA(120, 144, 156, 1)
+        FocusedBorderColor: =FilterDatestartDate.BorderColor
+        Height: =14
+        HoverBorderColor: =FilterDatestartDate.BorderColor
+        HoverColor: =FilterDatestartDate.Color
+        HoverFill: =FilterDatestartDate.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =FilterDatestartDate.BorderColor
+        PressedColor: =FilterDatestartDate.Color
+        PressedFill: =FilterDatestartDate.Fill
+        Size: =13.5
+        Text: ="START DATE"
+        Width: =120
+        X: =15
+        Y: =136
+        ZIndex: =27
+
+    FilterDateEndDateLabel As label:
+        Color: =RGBA(120, 144, 156, 1)
+        FocusedBorderColor: =FilterDateEndDateLabel.BorderColor
+        Height: =15
+        HoverBorderColor: =FilterDateEndDateLabel.BorderColor
+        HoverColor: =FilterDateEndDateLabel.Color
+        HoverFill: =FilterDateEndDateLabel.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =FilterDateEndDateLabel.BorderColor
+        PressedColor: =FilterDateEndDateLabel.Color
+        PressedFill: =FilterDateEndDateLabel.Fill
+        Size: =13.5
+        Text: ="END DATE"
+        Width: =120
+        X: =304
+        Y: =136
+        ZIndex: =28
+
+    FilterDateStartDate As datepicker:
+        BorderThickness: =0
+        DefaultDate: =ExpenseStartDate
+        FocusedBorderColor: =FilterDateStartDate.BorderColor
+        FocusedBorderThickness: =0
+        Height: =70
+        HoverBorderColor: =FilterDateStartDate.BorderColor
+        HoverFill: =FilterDateStartDate.Fill
+        IconFill: =RGBA(4, 169, 244, 1)
+        InputTextPlaceholder: =Text(Date(2001,12,31), FilterDateStartDate.Format, FilterDateStartDate.Language)
+        PressedBorderColor: =FilterDateStartDate.BorderColor
+        PressedFill: =FilterDateStartDate.Fill
+        Size: =13.5
+        Width: =228
+        X: =15
+        Y: =171
+        ZIndex: =29
+
+    FilterDateEndDate As datepicker:
+        BorderThickness: =0
+        FocusedBorderColor: =FilterDateEndDate.BorderColor
+        FocusedBorderThickness: =0
+        Height: =70
+        HoverBorderColor: =FilterDateEndDate.BorderColor
+        HoverFill: =FilterDateEndDate.Fill
+        IconFill: =RGBA(4, 169, 244, 1)
+        InputTextPlaceholder: =Text(Date(2001,12,31), FilterDateEndDate.Format, FilterDateEndDate.Language)
+        PressedBorderColor: =FilterDateEndDate.BorderColor
+        PressedFill: =FilterDateEndDate.Fill
+        Size: =13.5
+        Width: =228
+        X: =304
+        Y: =171
+        ZIndex: =30
+
+    FilterDateApply As button:
+        BorderColor: =RGBA(4, 169, 244, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =ColorFade(FilterDateApply.BorderColor, 70%)
+        Fill: =RGBA(4, 169, 244, 1)
+        FocusedBorderColor: =FilterDateApply.BorderColor
+        FocusedBorderThickness: =0
+        FontWeight: =FontWeight.Normal
+        Height: =54
+        HoverBorderColor: =ColorFade(FilterDateApply.BorderColor, 20%)
+        HoverColor: =FilterDateApply.Color
+        HoverFill: =ColorFade(FilterDateApply.Fill, 20%)
+        OnSelect: =Set(ExpenseStartDate, FilterDateStartDate.SelectedDate); Set(ExpenseEndDate, FilterDateEndDate.SelectedDate); Back()
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =FilterDateApply.Fill
+        PressedColor: =FilterDateApply.Fill
+        PressedFill: =FilterDateApply.Color
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =14
+        Text: ="APPLY"
+        Width: =228
+        X: =206
+        Y: =331
+        ZIndex: =31
+
