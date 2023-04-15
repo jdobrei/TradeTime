@@ -1,0 +1,16 @@
+[
+  {
+    "Data": "[{\"TEAM NAMES\":\"Simply The Best\"}]",
+    "IsSampleData": false,
+    "IsWritable": false,
+    "Name": "TeamName",
+    "OrderedColumnNames": [
+      "TEAM NAMES"
+    ],
+    "OriginalName": "TeamName",
+    "OriginalSchema": "*['TEAM NAMES':s]",
+    "Schema": "*['TEAM NAMES':s]",
+    "Token": "dummyToken",
+    "Type": "StaticDataSourceInfo"
+  }
+]
