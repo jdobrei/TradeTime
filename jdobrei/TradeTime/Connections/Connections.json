@@ -1,0 +1,27 @@
+{
+  "8ef1acab-6ad6-4a28-80b9-280013e9a3f8": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1627/1.0.1627.3238/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://bartonmalow.sharepoint.com/sites/NightSKY": {
+        "dataSources": {
+          "U2: Employee List": {
+            "tableName": "12aa25cf-e9a1-42c5-a2e5-a14aa607a8cf"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "U2: Employee List"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8ef1acab-6ad6-4a28-80b9-280013e9a3f8"
+  }
+}

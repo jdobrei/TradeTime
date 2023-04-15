@@ -1,0 +1,17 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2022-12-19T18:05:56.7150000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {},
+    "DatasetName": "https://bartonmalow.sharepoint.com/sites/NightSKY",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "U2: Employee List",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

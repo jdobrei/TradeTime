@@ -1,0 +1,158 @@
+DeleteExpenseConfirm As screen:
+    Fill: =RGBA(237, 241, 244, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    DeleteExpenseTitleLabel As label:
+        Align: =Align.Center
+        FocusedBorderColor: =DeleteExpenseTitleLabel.BorderColor
+        Height: =49
+        HoverBorderColor: =DeleteExpenseTitleLabel.BorderColor
+        HoverColor: =DeleteExpenseTitleLabel.Color
+        HoverFill: =DeleteExpenseTitleLabel.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =DeleteExpenseTitleLabel.BorderColor
+        PressedColor: =DeleteExpenseTitleLabel.Color
+        PressedFill: =DeleteExpenseTitleLabel.Fill
+        Size: =28
+        Text: |-
+            ="Delete Time Sheet: "
+        VerticalAlign: =VerticalAlign.Top
+        Width: =640
+        Y: =463
+        ZIndex: =2
+
+    DeleteExpenseTitle As label:
+        Align: =Align.Center
+        Color: =RGBA(74, 74, 74, 1)
+        FocusedBorderColor: =DeleteExpenseTitle.BorderColor
+        Height: =45
+        HoverBorderColor: =DeleteExpenseTitle.BorderColor
+        HoverColor: =DeleteExpenseTitle.Color
+        HoverFill: =DeleteExpenseTitle.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =DeleteExpenseTitle.BorderColor
+        PressedColor: =DeleteExpenseTitle.Color
+        PressedFill: =DeleteExpenseTitle.Fill
+        Size: =24
+        Text: =SelectedReport2.Title
+        Width: =600
+        Wrap: =false
+        X: =20
+        Y: =561
+        ZIndex: =3
+
+    DeleteExpenseId As label:
+        Align: =Align.Center
+        Color: =RGBA(74, 74, 74, 1)
+        FocusedBorderColor: =DeleteExpenseId.BorderColor
+        Height: =30
+        HoverBorderColor: =DeleteExpenseId.BorderColor
+        HoverColor: =DeleteExpenseId.Color
+        HoverFill: =DeleteExpenseId.Fill
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =DeleteExpenseId.BorderColor
+        PressedColor: =DeleteExpenseId.Color
+        PressedFill: =DeleteExpenseId.Fill
+        Size: =20
+        Text: =SelectedReport2.ID
+        Width: =640
+        Y: =629
+        ZIndex: =4
+
+    DeleteExpenseCancelButton As button:
+        BorderColor: =RGBA(4, 169, 244, 1)
+        BorderThickness: =1
+        Color: =RGBA(4, 169, 244, 1)
+        DisabledBorderColor: =ColorFade(DeleteExpenseCancelButton.BorderColor, 70%)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =DeleteExpenseCancelButton.BorderColor
+        FocusedBorderThickness: =1
+        FontWeight: =FontWeight.Normal
+        Height: =54
+        HoverBorderColor: =ColorFade(DeleteExpenseCancelButton.BorderColor, 20%)
+        HoverColor: =DeleteExpenseCancelButton.Color
+        HoverFill: =ColorFade(DeleteExpenseCancelButton.Fill, 20%)
+        OnSelect: =Back()
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =DeleteExpenseCancelButton.Fill
+        PressedColor: =DeleteExpenseCancelButton.Fill
+        PressedFill: =DeleteExpenseCancelButton.Color
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =14
+        Text: ="CANCEL"
+        Width: =129
+        X: =165
+        Y: =710
+        ZIndex: =5
+
+    DeleteExpenseDeleteButton As button:
+        BorderColor: =RGBA(4, 169, 244, 1)
+        BorderThickness: =0
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =ColorFade(DeleteExpenseDeleteButton.BorderColor, 70%)
+        Fill: =RGBA(4, 169, 244, 1)
+        FocusedBorderColor: =DeleteExpenseDeleteButton.BorderColor
+        FocusedBorderThickness: =0
+        FontWeight: =FontWeight.Normal
+        Height: =54
+        HoverBorderColor: =ColorFade(DeleteExpenseDeleteButton.BorderColor, 20%)
+        HoverColor: =DeleteExpenseDeleteButton.Color
+        HoverFill: =ColorFade(DeleteExpenseDeleteButton.Fill, 20%)
+        OnSelect: |-
+            =Remove(LineItems2,Filter(LineItems2,ReportID=SelectedReport2.ID));Remove(Expenses2,First(Filter(Expenses2,ID=SelectedReport2.ID)));
+            Set(SelectedReport2, Blank());
+            Set(SelectedLineItem2, Blank());
+            
+            Navigate('My Expense',ScreenTransition.None)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =DeleteExpenseDeleteButton.Fill
+        PressedColor: =DeleteExpenseDeleteButton.Fill
+        PressedFill: =DeleteExpenseDeleteButton.Color
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =14
+        Text: ="DELETE"
+        Width: =129
+        X: =344
+        Y: =710
+        ZIndex: =6
+
+    DeleteExpenseConfirmIcon As icon.Trash:
+        Color: =RGBA(4, 169, 244, 1)
+        DisabledFill: =DeleteExpenseConfirmIcon.Fill
+        FocusedBorderColor: =DeleteExpenseConfirmIcon.BorderColor
+        FocusedBorderThickness: =0
+        Height: =112
+        HoverBorderColor: =ColorFade(DeleteExpenseConfirmIcon.BorderColor, 20%)
+        HoverColor: =ColorFade(DeleteExpenseConfirmIcon.Color, 20%)
+        HoverFill: =DeleteExpenseConfirmIcon.Fill
+        Icon: =Icon.Trash
+        PressedBorderColor: =ColorFade(DeleteExpenseConfirmIcon.BorderColor, -20%)
+        PressedColor: =ColorFade(DeleteExpenseConfirmIcon.Color, -20%)
+        PressedFill: =DeleteExpenseConfirmIcon.Fill
+        Width: =94
+        X: =273
+        Y: =271
+        ZIndex: =7
+
