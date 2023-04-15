@@ -1,0 +1,46 @@
+App As appinfo:
+    BackEnabled: =false
+    MinScreenHeight: =320
+    MinScreenWidth: =320
+    OnError: =
+    OnStart: |-
+        =Set(ExpenseStartDate, DateAdd(Now(),-7,TimeUnit.Months));
+        Set(ExpenseEndDate, DateAdd(Now(), 14, TimeUnit.Days));
+        
+        ClearCollect(Expenses2, 
+            {Title: "Client hosted meet and greet", ID: "4", ApproverName: "Maria Campbell", StartDate: DateAdd(Now(), -1, TimeUnit.Days), EndDate: DateAdd(Now(), 6, TimeUnit.Days), 
+            Status: "Open", DateSubmitted: DateAdd(Now(), -1, TimeUnit.Days), CostCenter: "FusionTomo", Comments: "Great Stuff"},
+        
+            {Title: "Emergency keynote speaker for Percy Bowman", ID: "3", ApproverName: "Maria Campbell", StartDate: DateAdd(Now(), -1, TimeUnit.Months), EndDate: DateAdd(Now(), -24, TimeUnit.Days), 
+            Status: "Approved", DateSubmitted: DateAdd(Now(), -24, TimeUnit.Days), CostCenter: "Contoso", Comments: "Hope Percy's doing okay"},
+        
+            {Title: "Onsite with client to get vendor status started", ID: "2", ApproverName: "Maria Campbell", StartDate: DateAdd(Now(), -14, TimeUnit.Days), EndDate: DateAdd(Now(), -11, TimeUnit.Days), 
+            Status: "Pending", DateSubmitted: DateAdd(Now(), -2, TimeUnit.Days), CostCenter: "Fabrikam", Comments: "Need to get sign off from corporate"},
+        
+            {Title: "Internal R&D", ID: "1", ApproverName: "Maria Campbell", StartDate: DateAdd(Now(), -2, TimeUnit.Quarters), EndDate: DateAdd(Now(), -5, TimeUnit.Months), 
+            Status: "Approved", DateSubmitted: DateAdd(Now(), -5, TimeUnit.Months), CostCenter: "", Comments: "Looks good"}
+        );
+        
+        ClearCollect(LineItems2,
+            {Title: "Meals for day", ID: "11", Date: DateAdd(Now(), -1, TimeUnit.Days), Category: "Food & Beverage", Cost: 100, ReportID: Text("1"), Description: "Breakfast, Lunch, Dinner, and Drinks"},
+        
+            {Title: "Uber to visit Percy", ID: "10", Date: DateAdd(Now(), -29, TimeUnit.Days), Category: "Transportation", Cost: 20, ReportID: "2", Description: "Visited Percy to checkup on things"},
+            {Title: "Flowers", ID: "9", Date: DateAdd(Now(), -29, TimeUnit.Days), Category: "Business Needs", Cost: 40, ReportID: "2", Description: "Striped Carnations"},
+            {Title: "Rented projector", ID: "8", Date: DateAdd(Now(), -28, TimeUnit.Days), Category: "Business Needs", Cost: 30, ReportID: "2", Description: "Needed projector for presentation"},
+            {Title: "Hotel Room", ID: "7", Date: DateAdd(Now(), -24, TimeUnit.Days), Category: "Business Needs", Cost: 1400, ReportID: "2", Description: "Hotel Room for my stay"},
+        
+            {Title: "Dinner", ID: "6", Date: DateAdd(Now(), -13, TimeUnit.Days), Category: "Food & Beverage", Cost: 40, ReportID: "3", Description: "Salmon"},
+            {Title: "Dinner", ID: "5", Date: DateAdd(Now(), -12, TimeUnit.Days), Category: "Food & Beverage", Cost: 40, ReportID: "3", Description: "Steak"},
+            {Title: "Hotel Room", ID: "4", Date: DateAdd(Now(), -11, TimeUnit.Days), Category: "Business Needs", Cost: 600, ReportID: "3", Description: "Hotel Room for my stay"},
+        
+            {Title: "Meals", ID: "3", Date: DateAdd(Now(), -5, TimeUnit.Months), Category: "Food & Beverage", Cost: 1400, ReportID: "4", Description: "All meals throughout trip"},
+            {Title: "Transportation", ID: "2", Date: DateAdd(Now(), -5, TimeUnit.Months), Category: "Transportation", Cost: 400, ReportID: "4", Description: "All transportation throughout trip"},
+            {Title: "Lodging", ID: "1", Date: DateAdd(Now(), -5, TimeUnit.Months), Category: "Business Needs", Cost: 1400, ReportID: "4", Description: "Lodging throughout trip"}
+        );
+        
+        ClearCollect(Approvers, ["Thomas Andersen", "Paul Cannon", "Nancy Anderson", "Maria Campbell"]);
+        
+        ClearCollect(CostCenters, ["Microsoft", "Contoso", "Fabrikam","Fusion Tomo", "Blue Yonder"]);
+        
+        ClearCollect(Categories, ["Food & Beverage", "Transportation", "Business Needs"])
+

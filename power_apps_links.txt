@@ -1,8 +1,0 @@
-https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/overview
-https://powerapps.microsoft.com/en-us/blog/calling-azure-ad-protected-azure-functions-using-a-custom-connector/
-https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api
-https://powerapps.microsoft.com/en-us/blog/introducing-microsoft-power-platform-api-preview/
-https://learn.microsoft.com/en-us/rest/api/power-bi/
-https://powerapps.microsoft.com/hr-hr/blog/register-and-use-custom-apis-in-powerapps/
-https://learn.microsoft.com/en-us/power-platform/admin/powerplatform-api-getting-started
-https://powerapps.microsoft.com/en-us/blog/whats-new-power-apps-august-2022-feature-update/
