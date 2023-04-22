@@ -1,1 +1,2 @@
 File Operation Logger write: identified_issues.txt
+write: app_functionality_notes.txt
